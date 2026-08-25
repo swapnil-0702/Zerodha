@@ -1,0 +1,127 @@
+.order-form {
+    position: absolute;
+    top: 390px;
+    left: 500px;
+    width: 270px;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+/* Header */
+
+.order-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #e8f5e9;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-form-header.sell-order {
+    background: #ffebee;
+}
+
+.order-form-header span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.order-form-header h3 {
+    margin: 3px 0 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.order-close {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Inputs */
+
+.order-form-fields {
+    display: flex;
+    gap: 8px;
+    padding: 15px;
+}
+
+.order-form-fields label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+    color: #555;
+    flex: 1;
+}
+
+.order-form-fields input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 14px;
+    outline: none;
+}
+
+.order-form-fields input:focus {
+    border-color: #387ed1;
+}
+
+/* Margin */
+
+.margin-required {
+    padding: 0 15px 12px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Buttons */
+
+.order-form-footer {
+    display: flex;
+    gap: 8px;
+    padding: 0 15px 15px;
+}
+
+.buy-order-button,
+.sell-order-button,
+.cancel-order-button {
+    border: none;
+    padding: 9px 18px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.buy-order-button {
+    background: #387ed1;
+    color: white;
+}
+
+.sell-order-button {
+    background: #df514c;
+    color: white;
+}
+
+.cancel-order-button {
+    background: #eee;
+    color: #555;
+}
+
+.buy-order-button:hover {
+    background: #2f6db5;
+}
+
+.sell-order-button:hover {
+    background: #c9433e;
+}
+
+.cancel-order-button:hover {
+    background: #ddd;
+}

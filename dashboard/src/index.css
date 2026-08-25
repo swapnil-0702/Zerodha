@@ -1,0 +1,1129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #424242;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar-container {
+  height: 70px;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  background: #fff;
+  position: relative;
+}
+
+.indices-container {
+  display: flex;
+  gap: 45px;
+}
+
+.nifty,
+.sensex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.index {
+  color: #424242;
+  font-weight: 500;
+}
+
+.index-points {
+  color: #666;
+}
+
+.percent {
+  color: #387ed1;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.logo {
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  width: 56px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.menus ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menus li {
+  font-size: 14px;
+  color: #555;
+}
+
+.menus li:hover {
+  color: #387ed1;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f5d8f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9b59b6;
+  font-size: 10px;
+}
+
+/* =========================
+   MAIN DASHBOARD
+========================= */
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  min-height: calc(100vh - 70px);
+}
+
+/* =========================
+   WATCHLIST
+========================= */
+
+.watchlist-container {
+  border-right: 1px solid #e6e6e6;
+  background: #fff;
+}
+
+.search-container {
+  height: 55px;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.search-container input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 12px;
+}
+
+.search-container span {
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.watchlist {
+  overflow-y: auto;
+}
+
+.watch-item {
+  height: 55px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 13px;
+}
+
+.watch-item:hover {
+  background: #fafafa;
+}
+
+.stock-name {
+  margin-right: 10px;
+}
+
+.stock-price {
+  color: #555;
+}
+
+.profit {
+  color: #2eaf61;
+}
+
+.loss {
+  color: #df514c;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  padding: 55px 55px;
+}
+
+.summary {
+  max-width: 900px;
+}
+
+.greeting h1 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.summary hr {
+  border: none;
+  border-top: 1px solid #e6e6e6;
+  margin: 25px 0;
+}
+
+.section h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.equity-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.equity-main h1 {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.equity-main p {
+  color: #999;
+  font-size: 13px;
+}
+
+.equity-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.equity-details div,
+.holding-details div {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  min-width: 200px;
+}
+
+.equity-details span,
+.holding-details span {
+  color: #999;
+  font-size: 13px;
+}
+
+.equity-details b,
+.holding-details b {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.holdings-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profit-value {
+  font-size: 36px;
+  font-weight: 400;
+  color: #2eaf61;
+  display: inline-block;
+}
+
+.profit-text {
+  display: inline-block;
+  margin-left: 8px;
+  color: #2eaf61;
+  font-size: 13px;
+}
+
+.holding-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.position-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.position-summary h1 {
+  font-weight: 400;
+}
+
+.position-summary p {
+  margin-top: 10px;
+  color: #999;
+  font-size: 13px;
+}
+
+/* =========================
+   OTHER PAGES
+========================= */
+
+.page-container {
+  max-width: 1000px;
+}
+
+.page-container h1 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 35px;
+}
+
+.empty-page {
+  text-align: center;
+  padding: 100px 20px;
+  color: #777;
+}
+
+.empty-page h2 {
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.empty-page p {
+  margin-bottom: 25px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  background: #387ed1;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+button:hover {
+  background: #2f6db5;
+}
+
+button.secondary {
+  background: #fff;
+  color: #387ed1;
+  border: 1px solid #387ed1;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+thead {
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  text-align: left;
+  padding: 15px;
+  color: #999;
+  font-weight: 400;
+}
+
+td {
+  padding: 18px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   FUNDS
+========================= */
+
+.fund-card {
+  border: 1px solid #e6e6e6;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.fund-card p {
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.fund-card h1,
+.fund-card h2 {
+  font-weight: 400;
+}
+
+.fund-actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* =========================
+   APPS
+========================= */
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.app-card {
+  border: 1px solid #e6e6e6;
+  padding: 25px;
+}
+
+.app-card h2 {
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.app-card p {
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+
+  .watchlist-container {
+    display: none;
+  }
+
+  .menus ul {
+    gap: 10px;
+  }
+
+  .topbar-container {
+    padding: 0 15px;
+  }
+
+  .indices-container {
+    display: none;
+  }
+
+  .content {
+    padding: 30px 20px;
+  }
+
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f5d8f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #9b59b6;
+  font-size: 11px;
+}
+
+
+/* =========================
+   PROFILE DROPDOWN
+========================= */
+
+.profile-dropdown {
+  position: absolute;
+
+  /* Put dropdown below the profile */
+  top: 45px;
+  right: 0;
+
+  width: 240px;
+
+  background: #fff;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+
+  padding: 20px;
+
+  z-index: 9999;
+}
+
+
+/* Profile information */
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-header h3 {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-header p {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+  color: #999;
+}
+
+
+/* Large avatar inside dropdown */
+
+.profile-avatar {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #f5d8f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #9b59b6;
+
+  font-size: 12px;
+}
+
+
+/* Horizontal line */
+
+.profile-dropdown hr {
+  border: none;
+
+  border-top: 1px solid #eee;
+
+  margin: 18px 0;
+}
+
+
+/* Dropdown items */
+
+.dropdown-item {
+  margin: 0;
+
+  padding: 10px 5px;
+
+  font-size: 13px;
+
+  color: #555;
+
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #f8f8f8;
+
+  color: #387ed1;
+}
+
+/* =========================================
+   WATCHLIST CONTAINER
+========================================= */
+
+.watchlist-container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+
+  background: #fff;
+  border-right: 1px solid #eee;
+}
+
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.search-container {
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #eee;
+}
+
+.search {
+  width: 80%;
+
+  border: none;
+  outline: none;
+
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+
+  color: #424242;
+
+  background: transparent;
+}
+
+.search::placeholder {
+  color: #999;
+}
+
+.counts {
+  font-size: 11px;
+  color: #999;
+}
+
+
+/* =========================================
+   WATCHLIST
+========================================= */
+
+.list {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+}
+
+
+/* =========================================
+   EACH STOCK ROW
+========================================= */
+
+.list li {
+  position: relative;
+
+  width: 100%;
+  height: 45px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  border-bottom: 1px solid #eee;
+
+  background: #fff;
+
+  cursor: pointer;
+}
+
+
+/* Hover */
+
+.list li:hover {
+  background: #f8f8f8;
+}
+
+
+/* =========================================
+   STOCK ITEM
+========================================= */
+
+.item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Stock name */
+
+.item > p {
+  margin: 0;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  min-width: 100px;
+}
+
+
+/* =========================================
+   STOCK INFORMATION
+========================================= */
+
+.itemInfo {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  font-size: 12px;
+}
+
+
+/* Percentage */
+
+.percent {
+  font-size: 11px;
+
+  color: #999;
+
+  min-width: 55px;
+
+  text-align: right;
+}
+
+
+/* Price */
+
+.price {
+  min-width: 65px;
+
+  text-align: right;
+
+  font-size: 12px;
+
+  color: #666;
+}
+
+
+/* =========================================
+   PROFIT / LOSS
+========================================= */
+
+.up {
+  color: #3cb371;
+}
+
+.down {
+  color: #df514c;
+}
+
+
+/* =========================================
+   MATERIAL UI ARROWS
+========================================= */
+
+.itemInfo svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* =========================================
+   WATCHLIST ACTIONS
+========================================= */
+
+.actions {
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 3px 4px;
+
+  background: #fff;
+
+  z-index: 20;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.actions button {
+  width: 30px;
+  height: 27px;
+
+  padding: 0;
+
+  border: 1px solid #ddd;
+  border-radius: 3px;
+
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+
+/* Buy */
+
+.actions .buy {
+  background: #387ed1;
+
+  color: #fff;
+
+  border: 1px solid #387ed1;
+}
+
+
+/* Sell */
+
+.actions .sell {
+  background: #df514c;
+
+  color: #fff;
+
+  border: 1px solid #df514c;
+}
+
+
+/* Other actions */
+
+.actions .action-button {
+  background: #fff;
+
+  color: #555;
+}
+
+
+/* Action hover */
+
+.actions button:hover {
+  background: #f1f1f1;
+}
+
+.actions .buy:hover {
+  background: #2f6fb8;
+}
+
+.actions .sell:hover {
+  background: #c9433f;
+}
+
+
+/* =========================================
+   ORDER FORM
+========================================= */
+
+.order-form {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 14px;
+  z-index: 50;
+  overflow: hidden;
+
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.order-form-header {
+  min-height: 58px;
+  padding: 10px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #fff;
+  background: #387ed1;
+}
+
+.order-form-header.sell-order {
+  background: #df514c;
+}
+
+.order-form-header span {
+  display: block;
+  margin-bottom: 3px;
+
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+.order-form-header h3 {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.order-close {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+}
+
+.order-close:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.order-form-fields {
+  padding: 14px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.order-form-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  color: #777;
+  font-size: 11px;
+}
+
+.order-form-fields input {
+  height: 34px;
+  width: 100%;
+  padding: 0 10px;
+
+  color: #424242;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  outline: none;
+  font-size: 13px;
+}
+
+.order-form-fields input:focus {
+  border-color: #387ed1;
+}
+
+.order-form-footer {
+  padding: 12px 14px 14px;
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  border-top: 1px solid #eee;
+}
+
+.order-form-footer button {
+  min-width: 78px;
+  height: 34px;
+  padding: 0 14px;
+
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.buy-order-button {
+  background: #387ed1;
+  color: #fff;
+}
+
+.buy-order-button:hover {
+  background: #2f6fb8;
+}
+
+.sell-order-button {
+  background: #df514c;
+  color: #fff;
+}
+
+.sell-order-button:hover {
+  background: #c9433f;
+}
+
+.cancel-order-button {
+  color: #555;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.cancel-order-button:hover {
+  background: #f7f7f7;
+}
+
+
+/* =========================================
+   MORE ICON
+========================================= */
+
+.actions svg {
+  width: 18px;
+  height: 18px;
+
+  color: #555;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .search-container {
+    padding: 0 10px;
+  }
+
+  .list li {
+    padding: 0 10px;
+  }
+
+  .item > p {
+    min-width: 70px;
+  }
+
+  .percent {
+    min-width: 45px;
+  }
+
+  .price {
+    min-width: 55px;
+  }
+
+}
+
+
+.orders-table {
+  width: 100%;
+  margin-top: 40px;
+}
+
+.orders-header,
+.order-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1fr;
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.orders-header {
+  color: #777;
+  font-size: 14px;
+}
+
+.order-row {
+  font-size: 14px;
+}
+
+.order-row:hover {
+  background-color: #fafafa;
+}
+
+.buy-order {
+  color: #387ed1;
+}
+
+.sell-order {
+  color: #ff5722;
+}
