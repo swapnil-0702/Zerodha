@@ -19,7 +19,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://zerodha-dashboard-es2e.onrender.com",
+    ],
     credentials: true,
   }),
 );
@@ -298,7 +302,7 @@ app.get("/stocks", async (req, res) => {
     }
 
     const response = await fetch(
-      `http://127.0.0.1:8787/stock/list?symbols=${symbols.join(",")}&res=num`
+      `http://127.0.0.1:8787/stock/list?symbols=${symbols.join(",")}&res=num`,
     );
 
     if (!response.ok) {
