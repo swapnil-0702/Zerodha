@@ -13,7 +13,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3002/login", {
+      const response = await fetch("https://zerodha-backend-4s7s.onrender.com/login", {
         method: "POST",
 
         // Important for login session/cookie
@@ -48,7 +48,7 @@ function Login() {
 
       // Redirect to dashboard
       setTimeout(() => {
-        window.location.href = "http://localhost:3000";
+        window.location.href = "https://zerodha-dashboard-es2e.onrender.com";
       }, 500);
     } catch (error) {
       console.log(error);
