@@ -6,11 +6,13 @@ import { positions } from "../data/data";
 const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
-  useEffect(() =>{
-    axios.get("http://localhost:3002/allPositions").then((res)=>{
-      setAllPositions(res.data);
-    });
-  } , []);
+  useEffect(() => {
+    axios
+      .get("https://zerodha-backend-4s7s.onrender.com/allPositions")
+      .then((res) => {
+        setAllPositions(res.data);
+      });
+  }, []);
 
   return (
     <>

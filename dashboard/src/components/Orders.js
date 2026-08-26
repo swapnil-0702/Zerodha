@@ -5,7 +5,9 @@ const Orders = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await fetch("http://localhost:3002/allOrders");
+      const response = await fetch(
+        "https://zerodha-backend-4s7s.onrender.com/allOrders",
+      );
 
       if (!response.ok) {
         throw new Error("Failed to fetch orders");
@@ -30,9 +32,7 @@ const Orders = () => {
       {orders.length === 0 ? (
         <div className="empty-page">
           <h2>No orders yet</h2>
-
           <p>Once you place an order, it will appear here.</p>
-
           <button>Start Trading</button>
         </div>
       ) : (
@@ -47,11 +47,8 @@ const Orders = () => {
           {orders.map((order) => (
             <div className="order-row" key={order._id}>
               <span>{order.name || order.symbol}</span>
-
               <span>{order.qty}</span>
-
               <span>₹{order.price}</span>
-
               <span
                 className={order.mode === "BUY" ? "buy-order" : "sell-order"}
               >

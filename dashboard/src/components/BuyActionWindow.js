@@ -47,7 +47,7 @@ const BuyActionWindow = () => {
     }
 
     try {
-      await axios.post("http://localhost:3002/newOrder", {
+      await axios.post("https://zerodha-backend-4s7s.onrender.com/newOrder", {
         name: stockName,
         symbol: selectedStock.symbol || stockName,
         qty: Number(qty),
