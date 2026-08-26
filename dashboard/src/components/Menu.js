@@ -9,7 +9,7 @@ const Menu = () => {
   useEffect(() => {
     const fetchLoggedInUser = async () => {
       try {
-        const response = await fetch("http://localhost:3002/me", {
+        const response = await fetch("https://zerodha-backend-4s7s.onrender.com/me", {
           credentials: "include",
         });
 
@@ -46,7 +46,7 @@ const Menu = () => {
   const handleLogout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    window.location.href = "http://localhost:3001/login";
+    window.location.href = "https://zerodha-frontend-gyzx.onrender.com/login";
   };
 
   return (
