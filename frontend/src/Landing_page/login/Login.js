@@ -48,7 +48,9 @@ function Login() {
 
       // Redirect to dashboard
       setTimeout(() => {
-        window.location.href = "https://zerodha-dashboard-es2e.onrender.com";
+        const dashboardUrl = new URL("https://zerodha-dashboard-es2e.onrender.com");
+        dashboardUrl.searchParams.set("token", data.token);
+        window.location.href = dashboardUrl.toString();
       }, 500);
     } catch (error) {
       console.log(error);

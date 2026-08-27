@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  fetchLoggedInUser,
+  getAvatarLetter,
+  getDisplayName,
+  getStoredUser,
+  getUsername,
+} from "../utils/auth";
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
@@ -7,37 +14,24 @@ const Menu = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const fetchLoggedInUser = async () => {
+    const loadUser = async () => {
       try {
-        const response = await fetch("https://zerodha-backend-4s7s.onrender.com/me", {
-          credentials: "include",
-        });
-
-        if (response.ok) {
-          const loggedInUser = await response.json();
-          localStorage.setItem("user", JSON.stringify(loggedInUser));
-          setUser(loggedInUser);
-          return;
-        }
+        const loggedInUser = await fetchLoggedInUser();
+        setUser(loggedInUser);
+        return;
       } catch (error) {
         console.log("Unable to fetch logged-in user");
       }
 
-      const storedUser = localStorage.getItem("user");
-
-      try {
-        setUser(storedUser ? JSON.parse(storedUser) : null);
-      } catch (error) {
-        console.log("Invalid user data in localStorage");
-      }
+      setUser(getStoredUser());
     };
 
-    fetchLoggedInUser();
+    loadUser();
   }, []);
 
-  const firstLetter = user?.firstName?.trim().charAt(0).toUpperCase() || "U";
-  const displayName = user?.firstName || user?.username || "User";
-  const username = user?.username || displayName;
+  const firstLetter = getAvatarLetter(user);
+  const displayName = getDisplayName(user);
+  const username = getUsername(user);
 
   const toggleProfile = () => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);

@@ -249,18 +249,25 @@ app.post("/login", async (req, res) => {
 
 app.get("/me", async (req, res) => {
   try {
+    const authHeader = req.headers.authorization;
     const cookieHeader = req.headers.cookie;
 
-    if (!cookieHeader) {
+    const bearerToken = authHeader?.startsWith("Bearer ")
+      ? authHeader.split(" ")[1]
+      : null;
+
+    if (!cookieHeader && !bearerToken) {
       return res.status(401).json({
         message: "Not logged in",
       });
     }
 
-    const token = cookieHeader
-      .split("; ")
+    const cookieToken = cookieHeader
+      ?.split("; ")
       .find((row) => row.startsWith("token="))
       ?.split("=")[1];
+
+    const token = bearerToken || cookieToken;
 
     if (!token) {
       return res.status(401).json({

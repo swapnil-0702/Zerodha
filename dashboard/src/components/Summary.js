@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { fetchLoggedInUser, getDisplayName, getStoredUser } from "../utils/auth";
 
 const Summary = () => {
+  const [user, setUser] = useState(() => getStoredUser());
+
+  useEffect(() => {
+    fetchLoggedInUser()
+      .then(setUser)
+      .catch(() => {
+        setUser(getStoredUser());
+      });
+  }, []);
+
+  const displayName = getDisplayName(user);
+
   return (
     <div className="summary">
       <div className="greeting">
-        <h1>Hi, User!</h1>
+        <h1>Hi, {displayName}!</h1>
       </div>
 
       <hr />
