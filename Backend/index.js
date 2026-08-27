@@ -167,7 +167,7 @@ app.post("/signup", async (req, res) => {
 
     res.setHeader(
       "Set-Cookie",
-      `token=${token}; HttpOnly; Path=/; Max-Age=86400; SameSite=Lax`,
+      `token=${token}; HttpOnly; Path=/; Max-Age=86400; SameSite=None; Secure`,
     );
 
     res.status(201).json({
@@ -224,7 +224,7 @@ app.post("/login", async (req, res) => {
 
     res.setHeader(
       "Set-Cookie",
-      `token=${token}; HttpOnly; Path=/; Max-Age=86400; SameSite=Lax`,
+      `token=${token}; HttpOnly; Path=/; Max-Age=86400; SameSite=None; Secure`,
     );
 
     res.status(200).json({
